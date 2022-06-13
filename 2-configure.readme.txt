@@ -1,0 +1,15 @@
+Step 2: Configure Zabbix agent on Linux OS
+Keep in mind that in this tutorial I will use a Zabbix server with IP address 192.168.5.43 to monitor a Linux server called l01mylab that has IP address 192.168.5.114 – don’t forget to change those settings to match your environment. Feel free to check the official Zabbix documentation if you need more information about Zabbix agent configuration parameters.
+
+Let’s update some Zabbix agent configuration parameters, open Zabbix agent configuration file with with your favorite text editor:
+
+sudo nano /etc/zabbix/zabbix_agentd.conf
+And update these parameters:
+
+Server=192.168.5.43
+ServerActive=192.168.5.43
+HostMetadata=Linux
+HostnameItem=system.hostname
+In the “Server” and “ServerActive” parameters put the IP address of your Zabbix server or proxy!
+
+“HostMetadata” can be anything, any description of the system or a word that can help you later on in auto-registration process on the Zabbix frontend.
